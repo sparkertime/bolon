@@ -57,3 +57,10 @@ config :phoenix, :stacktrace_depth, 20
 
 # Initialize plugs at runtime for faster development compilation
 config :phoenix, :plug_init_mode, :runtime
+
+config :bolon, Bolon.Repo,
+  adapter: Ecto.Adapters.Postgres,
+  database: "bolon_dev",
+  username: "bolon_dev",
+  password: "bolon_dev_pw",
+  hostname: "localhost"

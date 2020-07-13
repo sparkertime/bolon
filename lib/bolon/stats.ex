@@ -1,4 +1,6 @@
 defmodule Bolon.Stats do
+  import Bolon.Random
+
   @stats ["STR", "WIS", "DEX", "INT", "CON", "CHA"]
   @prior_stats [
     {"DEX", "STR"},
@@ -53,7 +55,7 @@ defmodule Bolon.Stats do
 
   defp generate_random_stat_map do
     Enum.reduce(@stats, %{}, fn stat, acc ->
-      Map.put(acc, stat, [:rand.uniform(6), :rand.uniform(6), :rand.uniform(6)])
+      Map.put(acc, stat, [roll(6), roll(6), roll(6)])
     end)
   end
 end

@@ -7,6 +7,9 @@
 # General application configuration
 use Mix.Config
 
+config :bolon,
+  ecto_repos: [Bolon.Repo]
+
 # Configures the endpoint
 config :bolon, BolonWeb.Endpoint,
   url: [host: "localhost"],

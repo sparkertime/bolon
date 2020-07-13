@@ -1,0 +1,34 @@
+<div class="col-md-3">
+  <h2>
+    <%= @title %>
+  </h2>
+  
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>
+          Item
+        </th>
+        <th>
+          Coins
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= for price <- @prices do %>
+        <tr>
+          <td>
+            <%= if assigns[:type] && is_good_deal(assigns[:type], price.price) do %>🔥<% end %>
+            <%= if assigns[:type] && is_bad_deal(assigns[:type], price.price) do %>🦡<% end %>
+            <%= price.item %>
+            <%= if assigns[:type] && is_good_deal(assigns[:type], price.price) do %>🔥<% end %>
+            <%= if assigns[:type] && is_bad_deal(assigns[:type], price.price) do %>🦡<% end %>
+          </td>
+          <td>
+            <%= price.price %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

@@ -12,7 +12,8 @@ defmodule Bolon.Application do
       # Start the PubSub system
       {Phoenix.PubSub, name: Bolon.PubSub},
       # Start the Endpoint (http/https)
-      BolonWeb.Endpoint
+      BolonWeb.Endpoint,
+      Bolon.Repo
       # Start a worker by calling: Bolon.Worker.start_link(arg)
       # {Bolon.Worker, arg}
     ]

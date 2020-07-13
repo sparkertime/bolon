@@ -16,7 +16,7 @@ defmodule BolonWeb.Router do
   scope "/", BolonWeb do
     pipe_through :browser
 
-    get "/", PageController, :index
+    get "/", MarketController, :index
   end
 
   scope "/slack", BolonWeb do
