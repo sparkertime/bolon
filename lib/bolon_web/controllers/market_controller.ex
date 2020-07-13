@@ -8,7 +8,7 @@ defmodule BolonWeb.MarketController do
       common_prices: Bolon.Market.common_prices(),
       rare_prices: Bolon.Market.rare_prices(),
       exotic_prices: Bolon.Market.exotic_prices(),
-      armor_prices: Bolon.Market.armor_prices(),
+      armor_prices: Bolon.Market.armor_prices()
     )
   end
 end

@@ -10,15 +10,14 @@ use Mix.Config
 # which you should run after static files are built and
 # before starting your production server.
 config :bolon, BolonWeb.Endpoint,
-  url: [host: "example.com", port: 80],
-  cache_static_manifest: "priv/static/cache_manifest.json"
+  url: [host: "example.com", port: 80]
 
 # Do not print debug messages in production
 config :logger, level: :info
 
 config :bolon, Bolon.Repo,
   adapter: Ecto.Adapters.Postgres,
-  url: {:system, "DATABASE_URL"},
+  url: System.get_env("DATABASE_URL"),
   database: "",
   ssl: true,
   pool_size: 2
